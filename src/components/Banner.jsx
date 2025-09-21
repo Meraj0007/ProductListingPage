@@ -1,5 +1,5 @@
 import React from "react"
-import Myimage from "../assets/shoes-tranparent.png"
+import Myimage from "../assets/shoes-transparent.png";
 
 
 const Banner = () => {
