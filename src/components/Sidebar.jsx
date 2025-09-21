@@ -3,13 +3,13 @@ import { useState } from "react";
 
 export function Sidebar() {
 
-    const categories = ["Electronics", "Fashion", "Home", "Beauty", "Sports"];
+  const categories = ["Nike", "Airmax", "Nike", "Adidas", "Vans", "All Stars", "Adidas"];
   const colors = [
-    { name: "Red", value: "#f87171" },
-    { name: "Green", value: "#34d399" },
-    { name: "Blue", value: "#60a5fa" },
-    { name: "Yellow", value: "#facc15" },
-    { name: "Black", value: "#000000" },
+    { name: "Blue", value: "#006cff" },
+    { name: "Red", value: "#fc3e39" },
+    { name: "Black", value: "#171717" },
+    { name: "Yellow", value: "#fff600" },
+    { name: "Pink", value: "#FF00B4" },
   ];
   const brands = ["Nike", "Adidas", "Nike", "Siemens"];
 
@@ -20,8 +20,8 @@ export function Sidebar() {
   const toggleColor = (colorValue) => {
     setSelectedColors((prev) =>
       prev.includes(colorValue)
-        ? prev.filter((c) => c !== colorValue) // remove if already selected
-        : [...prev, colorValue] // add if not selected
+        ? prev.filter((c) => c !== colorValue)
+        : [...prev, colorValue]
     );
   };
 
@@ -58,9 +58,9 @@ export function Sidebar() {
             <div className="mb-6">
               <h3 className="font-semibold mb-3">PRICES</h3>
               <div className="flex items-center space-x-2 mb-2">
-                <span className="text-sm">$51.96</span>
+                <span className="text-sm">$13.99</span>
                 <span className="text-sm">-</span>
-                <span className="text-sm">$51.96</span>
+                <span className="text-sm">$25.99</span>
               </div>
               <div className="relative">
                 <div className="h-2 bg-gray-200 rounded">
@@ -88,18 +88,24 @@ export function Sidebar() {
 
             {/* Brand */}
             <div className="mb-6">
-              <h3 className="font-semibold mb-3">BRAND</h3>
-              <div className="space-y-2">
+              <h3 className="font-semibold mb-3 ">BRAND</h3>
+              <div className="space-y-2 ">
                 {brands.map((brand, index) => (
                   <label key={index} className="flex items-center">
-                    <input type="checkbox" className="mr-2" />
-                    <span className="text-gray-700">{brand}</span>
+                    <input
+                    type="checkbox"
+                    className="mr-2"
+                    checked={selectedBrands.includes(brand)}
+                    onChange={() => toggleBrand(brand)}
+                    />
+                    <span className="text-gray-700  hover:text-blue-600">{brand}</span>
                   </label>
-                ))}
-              </div>
-            </div>
+          ))}
+        </div>
+        
+      </div>
 
-            <button className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors">
+            <button className="w-full bg-gray-200 text-black py-2 rounded-lg hover:bg-blue-700 transition-colors">
               MORE
             </button>
           </aside>
